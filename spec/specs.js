@@ -16,13 +16,6 @@ describe('Space', function() {
     expect(testSpace.yCoordinate).to.equal(2);
   });
 
-  it("lets a player mark a space", function() {
-    var testPlayer = new Player("X")
-    var testSpace = new Space(1,2);
-    testSpace.markedBy(testPlayer)
-    expect(testSpace.markedBy(testPlayer)).to.equal(testPlayer);
-  });
-
   it("will change the empty property of a Space when clicked is run", function() {
     var testSpace = new Space(1,2);
     expect(testSpace.clicked()).to.equal(false);
@@ -41,9 +34,25 @@ describe('Board', function() {
     var testBoardMatrix = [[],[],[]];
     for(var i = 1; i <= 3; i++) {
       for(var j = 1; j <= 3; j++) {
-        testBoardMatrix[i-1,j-1] = new Space(i,j);
+        testBoardMatrix[i-1][j-1] = new Space(i,j);
       }
     }
     expect(testBoard.makeSpaces()).to.eql(testBoardMatrix);
+  });
+
+  it("will return a specific space on the board using input coordinates", function() {
+    var testBoard = new Board();
+    var testSpace = new Space(1,2);
+    testBoard.makeSpaces();
+    expect(testBoard.findSpace(1,2)).to.eql(testSpace);
+  });
+
+  it('will return true if there are three spaces with the same symbol in a row',function() {
+    var testBoard = new Board();
+    testBoard.makeSpaces();
+    testBoard.matrix[0][0].symbol = 'X';
+    testBoard.matrix[1][1].symbol = 'X';
+    testBoard.matrix[2][2].symbol = 'X';
+    expect(testBoard.checkWin()).to.equal(true);
   });
 });
