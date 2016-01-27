@@ -56,3 +56,12 @@ describe('Board', function() {
     expect(testBoard.checkWin()).to.equal(true);
   });
 });
+
+describe('Game', function() {
+  it('will initialize game object with two players', function() {
+    var testGame = new Game();
+    var testPlayer1 = new Player("X");
+    var testPlayer2 = new Player("O");
+    expect(testGame.initPlayers()).to.eql([testPlayer1,testPlayer2]);
+  });
+});

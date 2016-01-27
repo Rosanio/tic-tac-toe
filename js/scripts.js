@@ -13,6 +13,9 @@ var Board = function() {
   this.matrix;
 }
 
+var Game = function() {
+}
+
 Player.prototype.mark = function() {
   return this.symbol;
 }
@@ -81,4 +84,10 @@ Board.prototype.checkWin = function() {
     }
   }
   return false;
+}
+
+Game.prototype.initPlayers = function() {
+  var player1 = new Player("X");
+  var player2 = new Player("O");
+  return [player1, player2];
 }
