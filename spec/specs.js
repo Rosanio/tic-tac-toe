@@ -26,7 +26,13 @@ describe('Space', function() {
   it("will change the empty property of a Space when clicked is run", function() {
     var testSpace = new Space(1,2);
     expect(testSpace.clicked()).to.equal(false);
-  })
+  });
+
+  it("will update the symbol property of the Space object with a player clicks on it", function() {
+    var testSpace = new Space(1,2);
+    var testPlayer = new Player("X");
+    expect(testSpace.placeMark(testPlayer)).to.equal("X");
+  });
 });
 
 describe('Board', function() {

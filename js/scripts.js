@@ -24,6 +24,11 @@ Space.prototype.clicked = function() {
   return this.empty;
 }
 
+Space.prototype.placeMark = function(player) {
+  this.symbol += player.mark();
+  return this.symbol;
+}
+
 Board.prototype.makeSpaces = function() {
   var boardMatrix = [[],[],[]];
   for(var i = 1; i <= 3; i++) {
