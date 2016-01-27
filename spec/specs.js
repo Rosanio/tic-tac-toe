@@ -71,4 +71,12 @@ describe('Game', function() {
     testBoard.makeSpaces();
     expect(testGame.initBoard()).to.eql(testBoard);
   });
+
+  it('will switch players when the function is called', function() {
+    var testGame = new Game();
+    testGame.player1 = new Player("X");
+    testGame.player2 = new Player("O");
+    testGame.currentPlayer = testGame.player1;
+    expect(testGame.switchTurns()).to.equal(testGame.player2);
+  });
 });

@@ -17,6 +17,7 @@ var Game = function() {
   this.player1;
   this.player2;
   this.gameBoard;
+  this.currentPlayer;
 }
 
 Player.prototype.mark = function() {
@@ -90,6 +91,12 @@ Game.prototype.initPlayers = function() {
   var player2 = new Player("O");
   this.player1 = player1;
   this.player2 = player2;
+  var randomPlayerChoice = (Math.floor(Math.random()*10))+1;
+  if (randomPlayerChoice <= 5) {
+    this.currentPlayer = player1;
+  } else {
+    this.currentPlayer = player2;
+  }
   return [player1, player2];
 }
 
@@ -98,4 +105,12 @@ Game.prototype.initBoard = function() {
   board.makeSpaces();
   this.gameBoard = board;
   return board;
+}
+
+Game.prototype.switchTurns = function() {
+  if(this.currentPlayer === this.player1) {
+    return this.player2;
+  } else {
+    return this.player1;
+  }
 }
