@@ -14,6 +14,9 @@ var Board = function() {
 }
 
 var Game = function() {
+  this.player1;
+  this.player2;
+  this.gameBoard;
 }
 
 Player.prototype.mark = function() {
@@ -53,7 +56,6 @@ Board.prototype.checkWin = function() {
           continue;
         }
         if((this.matrix[0][j].symbol === this.matrix[1][j].symbol) && (this.matrix[1][j].symbol === this.matrix[2][j].symbol)) {
-          console.log('hor');
           return true;
         }
       }
@@ -63,7 +65,6 @@ Board.prototype.checkWin = function() {
           continue;
         }
         if((this.matrix[k][0].symbol === this.matrix[k][1].symbol) && (this.matrix[k][1].symbol === this.matrix[k][2].symbol)) {
-          console.log('ver');
           return true;
         }
       }
@@ -71,14 +72,12 @@ Board.prototype.checkWin = function() {
       return false;
     } else if(i === 3) {
       if((this.matrix[0][0].symbol === this.matrix[1][1].symbol) && (this.matrix[1][1].symbol === this.matrix[2][2].symbol)) {
-        console.log('dia1');
         return true;
       }
     } else if (this.matrix[0][2].symbol === "") {
       return false;
     } else if (i === 4) {
       if((this.matrix[2][0].symbol === this.matrix[1][1].symbol) && (this.matrix[1][1].symbol === this.matrix[0][2].symbol)) {
-        console.log('dia2');
         return true;
       }
     }
@@ -89,5 +88,14 @@ Board.prototype.checkWin = function() {
 Game.prototype.initPlayers = function() {
   var player1 = new Player("X");
   var player2 = new Player("O");
+  this.player1 = player1;
+  this.player2 = player2;
   return [player1, player2];
+}
+
+Game.prototype.initBoard = function() {
+  var board = new Board();
+  board.makeSpaces();
+  this.gameBoard = board;
+  return board;
 }

@@ -64,4 +64,11 @@ describe('Game', function() {
     var testPlayer2 = new Player("O");
     expect(testGame.initPlayers()).to.eql([testPlayer1,testPlayer2]);
   });
+
+  it('will initialize a board within game object', function() {
+    var testGame = new Game();
+    var testBoard = new Board();
+    testBoard.makeSpaces();
+    expect(testGame.initBoard()).to.eql(testBoard);
+  });
 });
