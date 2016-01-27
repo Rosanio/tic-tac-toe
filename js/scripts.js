@@ -114,3 +114,19 @@ Game.prototype.switchTurns = function() {
     return this.player1;
   }
 }
+
+Game.prototype.checkGameStatus = function() {
+  if (this.gameBoard.checkWin()) {
+    return 'win';
+  }
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      if (this.gameBoard.matrix[i][j].empty === true) {
+        return 'keep playing';
+      } else {
+        return 'tie';
+      }
+    }
+  }
+
+}

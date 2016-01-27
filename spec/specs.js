@@ -79,4 +79,15 @@ describe('Game', function() {
     testGame.currentPlayer = testGame.player1;
     expect(testGame.switchTurns()).to.equal(testGame.player2);
   });
+
+  it('will check if the game is over', function() {
+    var testGame = new Game();
+    testGame.initPlayers();
+    testGame.initBoard();
+    testGame.gameBoard.matrix[0][0].symbol = testGame.currentPlayer.symbol;
+    testGame.gameBoard.matrix[1][0].symbol = testGame.currentPlayer.symbol;
+    testGame.gameBoard.matrix[2][0].symbol = testGame.currentPlayer.symbol;
+    console.log(testGame.gameBoard);
+    expect(testGame.checkGameStatus()).to.equal('win');
+  });
 });
