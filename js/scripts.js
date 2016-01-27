@@ -128,5 +128,4 @@ Game.prototype.checkGameStatus = function() {
       }
     }
   }
-
 }
