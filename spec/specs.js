@@ -4,7 +4,7 @@ describe('Player', function() {
     expect(testPlayer.mark()).to.equal("X");
   });
 
-  it("returns the selected difficulty level", function() {
+  it("returns true if the difficult level is easy, and false for hard", function() {
     var testPlayer = new Player('X');
     expect(testPlayer.setDifficulty('easy')).to.equal('easy');
   });
@@ -93,5 +93,18 @@ describe('Game', function() {
     testGame.gameBoard.matrix[1][0].symbol = testGame.currentPlayer.symbol;
     testGame.gameBoard.matrix[2][0].symbol = testGame.currentPlayer.symbol;
     expect(testGame.checkGameStatus()).to.equal('win');
+  });
+
+  it('will return true if AI finds and empty space', function() {
+    var testGame = new Game();
+    testGame.initBoard();
+    testGame.initPlayers();
+    testGame.player1.difficulty = 'easy';
+    testGame.gameBoard.matrix[0][0].empty = false;
+    testGame.gameBoard.matrix[1][0].empty = false;
+    testGame.gameBoard.matrix[0][1].empty = false;
+    testGame.gameBoard.matrix[2][2].empty = false;
+    testGame.gameBoard.matrix[0][2].empty = false;
+    expect(testGame.playStyle()).to.equal(true);
   });
 });
