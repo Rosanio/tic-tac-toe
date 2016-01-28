@@ -3,6 +3,11 @@ describe('Player', function() {
     var testPlayer = new Player("X");
     expect(testPlayer.mark()).to.equal("X");
   });
+
+  it("returns the selected difficulty level", function() {
+    var testPlayer = new Player('X');
+    expect(testPlayer.setDifficulty('easy')).to.equal('easy');
+  });
 });
 
 describe('Space', function() {
@@ -87,7 +92,6 @@ describe('Game', function() {
     testGame.gameBoard.matrix[0][0].symbol = testGame.currentPlayer.symbol;
     testGame.gameBoard.matrix[1][0].symbol = testGame.currentPlayer.symbol;
     testGame.gameBoard.matrix[2][0].symbol = testGame.currentPlayer.symbol;
-    console.log(testGame.gameBoard);
     expect(testGame.checkGameStatus()).to.equal('win');
   });
 });

@@ -1,5 +1,7 @@
 var Player = function(symbol) {
   this.symbol = symbol;
+  this.difficulty;
+  this.playStyle;
 }
 
 var Space = function(xCoordinate, yCoordinate) {
@@ -22,6 +24,11 @@ var Game = function() {
 
 Player.prototype.mark = function() {
   return this.symbol;
+}
+
+Player.prototype.setDifficulty = function(level) {
+  this.difficulty = level;
+  return level;
 }
 
 Space.prototype.clicked = function() {
