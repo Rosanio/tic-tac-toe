@@ -2,7 +2,7 @@ body {
   text-align: center;
 }
 .container {
-  width:70%;
+  width:90%;
 }
 
 .banner h1 {
@@ -62,4 +62,8 @@ body {
 #bottom-right {
   border-bottom: none;
   border-right: none;
+}
+
+.reset {
+  margin-top: 50px;
 }
