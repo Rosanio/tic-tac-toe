@@ -108,9 +108,12 @@ Game.prototype.initBoard = function() {
 }
 
 Game.prototype.switchTurns = function() {
+  console.log('hi');
   if(this.currentPlayer === this.player1) {
+    this.currentPlayer = this.player2;
     return this.player2;
   } else {
+    this.currentPlayer = this.player1;
     return this.player1;
   }
 }
@@ -123,9 +126,177 @@ Game.prototype.checkGameStatus = function() {
     for (var j = 0; j < 3; j++) {
       if (this.gameBoard.matrix[i][j].empty === true) {
         return 'keep playing';
-      } else {
-        return 'tie';
       }
     }
   }
+  return 'tie';
 }
+
+$(function() {
+  var game = new Game();
+  game.initPlayers();
+  game.initBoard();
+  // var chooseSymbol = prompt("Would you like to be X's or O's?").toUpperCase();
+  // if(chooseSymbol !== 'X' || chooseSymbol !== 'O') {
+  //   alert("Please enter either 'X' or 'O'")
+  // }else if(chooseSymbol === game.currentPlayer.symbol) {
+  //   alert("Alright, you get to go first!");
+  // } else {
+  //   alert("Sorry, the other guy gets to go first...")
+  // }
+  var divIDs = ["top-left", "top-mid", "top-right", "left-mid", "mid-mid", "right-mid", "bottom-left", "bottom-mid", "bottom-right"]
+  var matrixIDs = [];
+  $("#" + divIDs[0]).click(function() {
+    if (game.gameBoard.matrix[0][0].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[0][0].clicked();
+      game.gameBoard.matrix[0][0].placeMark(game.currentPlayer);
+      $('#top-left > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[1]).click(function() {
+    if (game.gameBoard.matrix[1][0].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[1][0].clicked();
+      game.gameBoard.matrix[1][0].placeMark(game.currentPlayer);
+      $('#top-mid > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[2]).click(function() {
+    if (game.gameBoard.matrix[2][0].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[2][0].clicked();
+      game.gameBoard.matrix[2][0].placeMark(game.currentPlayer);
+      $('#top-right > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[3]).click(function() {
+    if (game.gameBoard.matrix[0][1].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[0][1].clicked();
+      game.gameBoard.matrix[0][1].placeMark(game.currentPlayer);
+      $('#left-mid > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[4]).click(function() {
+    if (game.gameBoard.matrix[1][1].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[1][1].clicked();
+      game.gameBoard.matrix[1][1].placeMark(game.currentPlayer);
+      $('#mid-mid > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[5]).click(function() {
+    if (game.gameBoard.matrix[2][1].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[2][1].clicked();
+      game.gameBoard.matrix[2][1].placeMark(game.currentPlayer);
+      $('#right-mid > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[6]).click(function() {
+    if (game.gameBoard.matrix[0][2].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[0][2].clicked();
+      game.gameBoard.matrix[0][2].placeMark(game.currentPlayer);
+      $('#bottom-left > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[7]).click(function() {
+    if (game.gameBoard.matrix[1][2].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[1][2].clicked();
+      game.gameBoard.matrix[1][2].placeMark(game.currentPlayer);
+      $('#bottom-mid > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+  $("#" + divIDs[8]).click(function() {
+    if (game.gameBoard.matrix[2][2].empty === false) {
+      alert('This space has been clicked on');
+    } else {
+      game.gameBoard.matrix[2][2].clicked();
+      game.gameBoard.matrix[2][2].placeMark(game.currentPlayer);
+      $('#bottom-right > .input').append(game.currentPlayer.symbol);
+      var status = game.checkGameStatus();
+      if (status === 'win') {
+        alert('You won!');
+      } else if (status === 'tie') {
+        alert("Everyone's a winner!");
+      } else {
+        game.switchTurns();
+      }
+    }
+  });
+});
