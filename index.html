@@ -12,67 +12,101 @@
   <section class="banner">
     <div class="container">
       <h1>TIC-TAC-TOE</h1>
-      <hr>
     </div>
   </section>
-  <section class="grid">
+  <!-- <section class="options">
     <div class="container">
-      <div id="ttt-box">
-        <div class="row">
-          <div id="top-left" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="top-mid" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="top-right" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
+      <div class="form-group">
+        <div id="game-type" data-toggle="buttons">
+          <label class="btn btn-default" id="human">
+            <input type="radio" name="climate" value="2player" autocomplete="off"> Play a human opponant
+          </label>
+          <label class="btn btn-default" id = "computer">
+            <input type="radio" name="climate" value="1player" autocomplete="off"> Play our computer
+          </label>
         </div>
-        <div class="row">
-          <div id="left-mid" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="mid-mid" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="right-mid" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          <div id="bottom-left" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="bottom-mid" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
-          <div id="bottom-right" class="space col-xs-4">
-            <p class="input">
-
-            </p>
-          </div>
+        <div id="difficulty" data-toggle="buttons">
+          <hr>
+          <label class="btn btn-default active" id="easy">
+            <input type="radio" name="climate" autocomplete="off"> Easy Mode
+          </label>
+          <label class="btn btn-default" id="hard">
+            <input type="radio" name="climate" autocomplete="off"> Hard Mode
+          </label>
         </div>
       </div>
-      <div class="reset">
-        <button class="btn btn-primary" id="reset" type="button">Reset</button>
+    </div>
+  </section> -->
+  <section class="grid">
+    <div class="game-space">
+      <div class="row">
+        <div class="col-xs-3">
+          <h1>Player 1</h1>
+          <hr>
+        </div>
+        <div class="col-xs-6">
+          <div id="ttt-box">
+            <div class="row">
+              <div id="top-left" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="top-mid" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="top-right" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div id="left-mid" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="mid-mid" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="right-mid" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div id="bottom-left" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="bottom-mid" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+              <div id="bottom-right" class="space col-xs-4">
+                <p class="input">
+
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <h1>Player 2</h1>
+          <hr>
+        </div>
       </div>
+    </div>
+    <div class="reset">
+      <button class="btn btn-primary" id="reset" type="button">Reset</button>
     </div>
   </section>
 </body>

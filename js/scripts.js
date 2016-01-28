@@ -580,6 +580,7 @@ $(function() {
     div.css("height", width);
   }
   // ************************* GAME FUNCTION
+  debugger;
   var game = new Game();
   game.initPlayers();
   game.initBoard();
@@ -601,15 +602,49 @@ $(function() {
   } else {
     alert("I guess you're doing 2 player then...");
   }
-  // var chooseSymbol = prompt("Would you like to be X's or O's?").toUpperCase();
-  // if(chooseSymbol !== 'X' || chooseSymbol !== 'O') {
-  //   alert("Please enter either 'X' or 'O'")
-  // }else if(chooseSymbol === game.currentPlayer.symbol) {
-  //   alert("Alright, you get to go first!");
-  // } else {
-  //   alert("Sorry, the other guy gets to go first...")
-  // }
-  var divIDs = ["top-left", "top-mid", "top-right", "left-mid", "mid-mid", "right-mid", "bottom-left", "bottom-mid", "bottom-right"]
+  var divIDs = ["top-left", "top-mid", "top-right", "left-mid", "mid-mid", "right-mid", "bottom-left", "bottom-mid", "bottom-right"];
+  // $('#human').click(function() {
+  //   game.players = 2;
+  //   for (var i = 0; i < 3; i++) {
+  //     for (var j = 0; j < 3; j++) {
+  //       game.gameBoard.matrix[i][j].empty = true;
+  //       game.gameBoard.matrix[i][j].symbol = "";
+  //     }
+  //   }
+  //   $(".input").empty();
+  // });
+  // $('#computer').click(function() {
+  //   game.players = 1;
+  //   $('#difficulty').slideDown();
+  //   for (var i = 0; i < 3; i++) {
+  //     for (var j = 0; j < 3; j++) {
+  //       game.gameBoard.matrix[i][j].empty = true;
+  //       game.gameBoard.matrix[i][j].symbol = "";
+  //     }
+  //   }
+  //   $(".input").empty();
+  //   $('#easy').click(function() {
+  //     game.player2.difficulty = 'easy';
+  //     for (var i = 0; i < 3; i++) {
+  //       for (var j = 0; j < 3; j++) {
+  //         game.gameBoard.matrix[i][j].empty = true;
+  //         game.gameBoard.matrix[i][j].symbol = "";
+  //       }
+  //     }
+  //     $(".input").empty();
+  //   });
+  //   $('#hard').click(function() {
+  //     game.player2.difficulty = 'hard';
+  //     for (var i = 0; i < 3; i++) {
+  //       for (var j = 0; j < 3; j++) {
+  //         game.gameBoard.matrix[i][j].empty = true;
+  //         game.gameBoard.matrix[i][j].symbol = "";
+  //       }
+  //     }
+  //     $(".input").empty();
+  //   });
+  // });
+
   if (game.players === 1) {
     $("#" + divIDs[0]).click(function() {
       var status = game.checkGameStatus();
