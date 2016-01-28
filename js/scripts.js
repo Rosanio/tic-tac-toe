@@ -212,6 +212,11 @@ Game.prototype.playStyle = function () {
       }
     }
   } else if (difficulty === "hard") {
+
+//Computer Win Check
+
+    //Vertical Wins
+
     if(this.gameBoard.matrix[0][0].symbol === 'O' && this.gameBoard.matrix[0][1].symbol === 'O' && this.gameBoard.matrix[0][2].symbol === '') {
       this.gameBoard.matrix[0][2].clicked();
       this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
@@ -227,7 +232,333 @@ Game.prototype.playStyle = function () {
       this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
       return 'space1';
     }
-    return false;
+
+    if(this.gameBoard.matrix[1][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[1][2].symbol === '') {
+      this.gameBoard.matrix[1][2].clicked();
+      this.gameBoard.matrix[1][2].placeMark(this.currentPlayer);
+      return 'space6';
+    }
+    if(this.gameBoard.matrix[1][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[1][2].symbol === 'O') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[1][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[1][2].symbol === 'O') {
+      this.gameBoard.matrix[1][0].clicked();
+      this.gameBoard.matrix[1][0].placeMark(this.currentPlayer);
+      return 'space4';
+    }
+
+    if(this.gameBoard.matrix[2][0].symbol === 'O' && this.gameBoard.matrix[2][1].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === 'O' && this.gameBoard.matrix[2][1].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[2][1].clicked();
+      this.gameBoard.matrix[2][1].placeMark(this.currentPlayer);
+      return 'space8';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === '' && this.gameBoard.matrix[2][1].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+    //Horizantal Wins
+
+    if(this.gameBoard.matrix[0][0].symbol === '' && this.gameBoard.matrix[1][0].symbol === 'O' && this.gameBoard.matrix[2][0].symbol === 'O') {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'O' && this.gameBoard.matrix[1][0].symbol === '' && this.gameBoard.matrix[2][0].symbol === 'O') {
+      this.gameBoard.matrix[1][0].clicked();
+      this.gameBoard.matrix[1][0].placeMark(this.currentPlayer);
+      return 'space4';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'O' && this.gameBoard.matrix[1][0].symbol === 'O' && this.gameBoard.matrix[2][0].symbol === '') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+    if(this.gameBoard.matrix[0][1].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[2][1].symbol === 'O') {
+      this.gameBoard.matrix[0][1].clicked();
+      this.gameBoard.matrix[0][1].placeMark(this.currentPlayer);
+      return 'space2';
+    }
+    if(this.gameBoard.matrix[0][1].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[2][1].symbol === 'O') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[0][1].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[2][1].symbol === '') {
+      this.gameBoard.matrix[2][1].clicked();
+      this.gameBoard.matrix[2][1].placeMark(this.currentPlayer);
+      return 'space8';
+    }
+
+    if(this.gameBoard.matrix[0][2].symbol === '' && this.gameBoard.matrix[1][2].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[0][2].symbol === 'O' && this.gameBoard.matrix[1][2].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[1][2].clicked();
+      this.gameBoard.matrix[1][2].placeMark(this.currentPlayer);
+      return 'space6';
+    }
+    if(this.gameBoard.matrix[0][2].symbol === 'O' && this.gameBoard.matrix[1][2].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+
+    //Diagonal Win Conditions
+
+    if(this.gameBoard.matrix[0][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[2][2].symbol === 'O') {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+
+    if(this.gameBoard.matrix[2][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[0][2].symbol === '') {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === 'O' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[0][2].symbol === 'O') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'O' && this.gameBoard.matrix[0][2].symbol === 'O') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+//Opponent Win Check
+
+    //Vertical Wins
+
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[0][1].symbol === 'X' && this.gameBoard.matrix[0][2].symbol === '') {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[0][1].symbol === '' && this.gameBoard.matrix[0][2].symbol === 'X') {
+      this.gameBoard.matrix[0][1].clicked();
+      this.gameBoard.matrix[0][1].placeMark(this.currentPlayer);
+      return 'space2';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === '' && this.gameBoard.matrix[0][1].symbol === 'X' && this.gameBoard.matrix[0][2].symbol === 'X') {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+
+    if(this.gameBoard.matrix[1][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[1][2].symbol === '') {
+      this.gameBoard.matrix[1][2].clicked();
+      this.gameBoard.matrix[1][2].placeMark(this.currentPlayer);
+      return 'space6';
+    }
+    if(this.gameBoard.matrix[1][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[1][2].symbol === 'X') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[1][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[1][2].symbol === 'X') {
+      this.gameBoard.matrix[1][0].clicked();
+      this.gameBoard.matrix[1][0].placeMark(this.currentPlayer);
+      return 'space4';
+    }
+
+    if(this.gameBoard.matrix[2][0].symbol === 'X' && this.gameBoard.matrix[2][1].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === 'X' && this.gameBoard.matrix[2][1].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[2][1].clicked();
+      this.gameBoard.matrix[2][1].placeMark(this.currentPlayer);
+      return 'space8';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === '' && this.gameBoard.matrix[2][1].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+    //Horizantal Wins
+
+    if(this.gameBoard.matrix[0][0].symbol === '' && this.gameBoard.matrix[1][0].symbol === 'X' && this.gameBoard.matrix[2][0].symbol === 'X') {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[1][0].symbol === '' && this.gameBoard.matrix[2][0].symbol === 'X') {
+      this.gameBoard.matrix[1][0].clicked();
+      this.gameBoard.matrix[1][0].placeMark(this.currentPlayer);
+      return 'space4';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[1][0].symbol === 'X' && this.gameBoard.matrix[2][0].symbol === '') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+    if(this.gameBoard.matrix[0][1].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[2][1].symbol === 'X') {
+      this.gameBoard.matrix[0][1].clicked();
+      this.gameBoard.matrix[0][1].placeMark(this.currentPlayer);
+      return 'space2';
+    }
+    if(this.gameBoard.matrix[0][1].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[2][1].symbol === 'X') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[0][1].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[2][1].symbol === '') {
+      this.gameBoard.matrix[2][1].clicked();
+      this.gameBoard.matrix[2][1].placeMark(this.currentPlayer);
+      return 'space8';
+    }
+
+    if(this.gameBoard.matrix[0][2].symbol === '' && this.gameBoard.matrix[1][2].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[0][2].symbol === 'X' && this.gameBoard.matrix[1][2].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[1][2].clicked();
+      this.gameBoard.matrix[1][2].placeMark(this.currentPlayer);
+      return 'space6';
+    }
+    if(this.gameBoard.matrix[0][2].symbol === 'X' && this.gameBoard.matrix[1][2].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+
+    //Diagonal Win Conditions
+
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === '') {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[0][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[2][2].symbol === 'X') {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+
+    if(this.gameBoard.matrix[2][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[0][2].symbol === '') {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === 'X' && this.gameBoard.matrix[1][1].symbol === '' && this.gameBoard.matrix[0][2].symbol === 'X') {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === '' && this.gameBoard.matrix[1][1].symbol === 'X' && this.gameBoard.matrix[0][2].symbol === 'X') {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+
+//Check Center
+
+    if(this.gameBoard.matrix[1][1].empty === true) {
+      this.gameBoard.matrix[1][1].clicked();
+      this.gameBoard.matrix[1][1].placeMark(this.currentPlayer);
+      return 'space5';
+    }
+
+//Check Opposite Corner
+
+    if(this.gameBoard.matrix[0][0].symbol === 'X' && this.gameBoard.matrix[2][2].empty === true) {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[2][0].symbol === 'X' && this.gameBoard.matrix[0][2].empty === true) {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[0][2].symbol === 'X' && this.gameBoard.matrix[2][0].empty === true) {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+    if(this.gameBoard.matrix[2][2].symbol === 'X' && this.gameBoard.matrix[0][0].empty === true) {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+
+//Check Empty Corners
+    if(this.gameBoard.matrix[2][2].empty === true) {
+      this.gameBoard.matrix[2][2].clicked();
+      this.gameBoard.matrix[2][2].placeMark(this.currentPlayer);
+      return 'space9';
+    }
+    if(this.gameBoard.matrix[0][2].empty === true) {
+      this.gameBoard.matrix[0][2].clicked();
+      this.gameBoard.matrix[0][2].placeMark(this.currentPlayer);
+      return 'space3';
+    }
+    if(this.gameBoard.matrix[2][0].empty === true) {
+      this.gameBoard.matrix[2][0].clicked();
+      this.gameBoard.matrix[2][0].placeMark(this.currentPlayer);
+      return 'space7';
+    }
+    if(this.gameBoard.matrix[0][0].empty === true) {
+      this.gameBoard.matrix[0][0].clicked();
+      this.gameBoard.matrix[0][0].placeMark(this.currentPlayer);
+      return 'space1';
+    }
+//Check Empty Outside Middle Spaces
+
+    if(this.gameBoard.matrix[1][0].empty === true) {
+      this.gameBoard.matrix[1][0].clicked();
+      this.gameBoard.matrix[1][0].placeMark(this.currentPlayer);
+      return 'space4';
+    }
+    if(this.gameBoard.matrix[2][1].empty === true) {
+      this.gameBoard.matrix[2][1].clicked();
+      this.gameBoard.matrix[2][1].placeMark(this.currentPlayer);
+      return 'space8';
+    }
+    if(this.gameBoard.matrix[1][2].empty === true) {
+      this.gameBoard.matrix[1][2].clicked();
+      this.gameBoard.matrix[1][2].placeMark(this.currentPlayer);
+      return 'space6';
+    }
+    if(this.gameBoard.matrix[0][1].empty === true) {
+      this.gameBoard.matrix[0][1].clicked();
+      this.gameBoard.matrix[0][1].placeMark(this.currentPlayer);
+      return 'space2';
+    }
   }
   return difficulty;
 }
@@ -254,10 +585,17 @@ $(function() {
   game.initBoard();
 
   var players = parseInt(prompt("Do you want to play with 1 or 2 human players?"));
-
   if (players === 1) {
     game.players = 1;
-    game.player2.difficulty = 'easy';
+    var difficil = prompt("Do you want to have a bad time?").toLowerCase();
+    if(difficil === "yes") {
+      game.player2.difficulty = 'hard';
+    } else if (difficil === 'no') {
+      game.player2.difficulty = 'easy';
+    } else {
+      alert("I'll take that as a yes");
+      game.player2.difficulty = 'hard';
+    }
   } else if (players === 2) {
     game.players = 2;
   } else {
@@ -321,8 +659,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -377,8 +717,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -433,8 +775,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -489,8 +833,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -545,8 +891,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -601,8 +949,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -657,8 +1007,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -713,8 +1065,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
@@ -769,8 +1123,10 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            game.switchTurns();
           } else {
             game.switchTurns();
           }
