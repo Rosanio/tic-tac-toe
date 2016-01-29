@@ -666,6 +666,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -699,9 +703,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -726,6 +736,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -759,9 +773,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -786,6 +806,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -819,9 +843,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -846,6 +876,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -879,9 +913,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -906,6 +946,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -939,9 +983,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -966,6 +1016,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -999,9 +1053,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -1026,6 +1086,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -1059,9 +1123,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -1086,6 +1156,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -1119,9 +1193,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -1146,6 +1226,10 @@ $(function() {
           $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
           var compSpace = game.playStyle();
@@ -1179,9 +1263,15 @@ $(function() {
           status = game.checkGameStatus();
           if (status === 'win') {
             alert('You got beat by a computer!');
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else if (status === 'tie') {
             alert("Everyone's a winner!");
+            playerOneScore += 1;
+            playerTwoScore += 1;
+            $('#score1').text(playerOneScore);
+            $('#score2').text(playerTwoScore);
             game.switchTurns();
           } else {
             game.switchTurns();
@@ -1221,6 +1311,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1248,6 +1342,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1275,6 +1373,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1302,6 +1404,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1329,6 +1435,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1356,6 +1466,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1383,6 +1497,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1410,6 +1528,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
@@ -1437,6 +1559,10 @@ $(function() {
           }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
+          playerOneScore += 1;
+          playerTwoScore += 1;
+          $('#score1').text(playerOneScore);
+          $('#score2').text(playerTwoScore);
         } else {
           game.switchTurns();
         }
