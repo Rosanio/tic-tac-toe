@@ -580,7 +580,6 @@ $(function() {
     div.css("height", width);
   }
   // ************************* GAME FUNCTION
-  debugger;
   var game = new Game();
   game.initPlayers();
   game.initBoard();
@@ -602,6 +601,8 @@ $(function() {
   } else {
     alert("I guess you're doing 2 player then...");
   }
+  var playerOneScore = 0;
+  var playerTwoScore = 0;
   var divIDs = ["top-left", "top-mid", "top-right", "left-mid", "mid-mid", "right-mid", "bottom-left", "bottom-mid", "bottom-right"];
   // $('#human').click(function() {
   //   game.players = 2;
@@ -614,6 +615,7 @@ $(function() {
   //   $(".input").empty();
   // });
   // $('#computer').click(function() {
+  //
   //   game.players = 1;
   //   $('#difficulty').slideDown();
   //   for (var i = 0; i < 3; i++) {
@@ -622,6 +624,7 @@ $(function() {
   //       game.gameBoard.matrix[i][j].symbol = "";
   //     }
   //   }
+  //   game.difficulty = 'easy';
   //   $(".input").empty();
   //   $('#easy').click(function() {
   //     game.player2.difficulty = 'easy';
@@ -659,6 +662,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -717,6 +722,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -775,6 +782,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -833,6 +842,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -891,6 +902,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -949,6 +962,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1007,6 +1022,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1065,6 +1082,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1123,6 +1142,8 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          playerOneScore += 1;
+          $('#score1').text(playerOneScore);
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1191,6 +1212,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1211,6 +1239,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1231,6 +1266,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1251,6 +1293,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1271,6 +1320,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1291,6 +1347,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1311,6 +1374,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1331,6 +1401,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {
@@ -1351,6 +1428,13 @@ $(function() {
         status = game.checkGameStatus();
         if (status === 'win') {
           alert('You won!');
+          if (game.currentPlayer === game.player1) {
+            playerOneScore += 1;
+            $('#score1').text(playerOneScore);
+          } else {
+            playerTwoScore += 1;
+            $('#score2').text(playerTwoScore);
+          }
         } else if (status === 'tie') {
           alert("Everyone's a winner!");
         } else {

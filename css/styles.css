@@ -47,6 +47,10 @@ hr {
 border-top: 2px solid #eee;
 }
 
+#score1, #score2 {
+  font-size: 4em;
+}
+
 /*****************************TIC TAC TOE GRID*/
 
 .game-space {
